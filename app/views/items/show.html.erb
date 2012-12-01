@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @item.image_url %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @item.lat %>
+</p>
+
+<p>
+  <b>Lon:</b>
+  <%= @item.lon %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @item.user_id %>
+</p>
+
+<p>
+  <b>Tracker count:</b>
+  <%= @item.tracker_count %>
+</p>
+
+<p>
+  <b>Claimed:</b>
+  <%= @item.claimed %>
+</p>
+
+<p>
+  <b>Claimed at:</b>
+  <%= @item.claimed_at %>
+</p>
+
+<p>
+  <b>Claimer:</b>
+  <%= @item.claimer_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

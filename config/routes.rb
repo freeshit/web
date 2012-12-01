@@ -1,4 +1,7 @@
 Freeshit::Application.routes.draw do
+  resources :items
+
+
   resources :posts
 
 

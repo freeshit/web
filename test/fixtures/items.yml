@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  image_url: MyString
+  lat: 1.5
+  lon: 1.5
+  user_id: 1
+  tracker_count: 
+  claimed: false
+  claimed_at: 2012-12-01 14:52:07
+  claimer_id: 1
+
+two:
+  description: MyString
+  image_url: MyString
+  lat: 1.5
+  lon: 1.5
+  user_id: 1
+  tracker_count: 
+  claimed: false
+  claimed_at: 2012-12-01 14:52:07
+  claimer_id: 1
