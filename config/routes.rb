@@ -2,6 +2,7 @@ Freeshit::Application.routes.draw do
   devise_for :users
 
   resources :items
+  resources :fb_items
 
 
   resources :posts

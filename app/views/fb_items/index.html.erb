@@ -1,0 +1,21 @@
+<h1>Listing fb_items</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fb_items.each do |fb_item| %>
+  <tr>
+    <td><%= link_to 'Show', fb_item %></td>
+    <td><%= link_to 'Edit', edit_fb_item_path(fb_item) %></td>
+    <td><%= link_to 'Destroy', fb_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fb item', new_fb_item_path %>

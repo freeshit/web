@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Description:</b>
+<!--<p id="notice"><%= notice %></p>-->
+<img src="<%= @item.image_url =%>" width="100%" />
+<div style="padding:5px;padding-bottom" >
+<div style="border-radius: 10px; padding:10px; background-color:#CCCCCC; font: 14pt/1.5em Helvetica,'Helvetica neue', Arial, sans-serif;box-shadow: 2px 2px 2px #000;">
   <%= @item.description %>
-</p>
+</div>
+</div>
 
-<p>
-  <b>Image url:</b>
-  <%= @item.image_url %>
-</p>
-
+<!--
 <p>
   <b>Lat:</b>
   <%= @item.lat %>
@@ -45,6 +42,6 @@
   <%= @item.claimer_id %>
 </p>
 
-
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+-->
