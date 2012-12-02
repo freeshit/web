@@ -13,10 +13,7 @@ class FbItemsController < ApplicationController
     require 'net/http'
     require 'json'
 
-    @response = Net::HTTP.get_response( URI.parse( "http://freeshit.firebaseio.com/items/%s.json" % [ params[:id] ] ) );
-    puts response.body;
-    puts "::";
-    return;
+    response = Net::HTTP.get_response( URI.parse( "http://freeshit.firebaseio.com/items/%s.json" % [ params[:id] ] ) );
     @fb_item = JSON.parse(response.body);
 
     respond_to do |format|
