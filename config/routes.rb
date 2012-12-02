@@ -1,9 +1,9 @@
 Freeshit::Application.routes.draw do
   devise_for :users
 
-  resources :items
+  #resources :items
   resources :fb_items
-
+  match "/items/:id" => "fb_items#show"
 
   resources :posts
 
