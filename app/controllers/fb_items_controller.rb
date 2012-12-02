@@ -7,7 +7,7 @@ class FbItemsController < ApplicationController
     begin
        @fb_item = JSON.parse(response.body)
     rescue
-       render_404
+       render :status => 500, :text => 'Something went wrong...'
        return
     end
     
@@ -31,7 +31,7 @@ class FbItemsController < ApplicationController
     begin
        @fb_item = JSON.parse(response.body)
     rescue
-       render_404
+       render :status => 404, :text => 'Item not found.'
        return
     end
 
