@@ -3,7 +3,20 @@ class FbItemsController < ApplicationController
   # GET /fb_items.json
   def index
     #@fb_items = FbItem.all
+    response = Net::HTTP.get_response( URI.parse( "http://freeshit.firebaseio.com/items.json" ) );
+    begin
+       @fb_item = JSON.parse(response.body)
+    rescue
+       render_404
+       return
+    end
+    
+    @fb_items = JSON.parse(response.body)
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @fb_items }
+    end
     
   end
 
@@ -14,7 +27,13 @@ class FbItemsController < ApplicationController
     require 'json'
 
     response = Net::HTTP.get_response( URI.parse( "http://freeshit.firebaseio.com/items/%s.json" % [ params[:id] ] ) );
-    @fb_item = JSON.parse(response.body);
+
+    begin
+       @fb_item = JSON.parse(response.body)
+    rescue
+       render_404
+       return
+    end
 
     respond_to do |format|
       format.html # show.html.erb

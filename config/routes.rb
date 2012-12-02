@@ -3,6 +3,7 @@ Freeshit::Application.routes.draw do
 
   #resources :items
   resources :fb_items
+  match "/items" => "fb_items#index"
   match "/items/:id" => "fb_items#show"
 
   resources :posts
