@@ -11,11 +11,15 @@ class FbItemsController < ApplicationController
        return
     end
     
-    @fb_items = JSON.parse(response.body)
+    @fb_items_dict = JSON.parse(response.body)
+
+    @fb_items_dict.map do |key,value|
+      value['id'] = key
+      value
+    end
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @fb_items }
+      format.json { render json: @fb_items_dict.values }
     end
     
   end
